@@ -13,8 +13,7 @@ aws configure --profile glue4
 
 ### Step 2 : Clone the project and Spin up AWS GLue Container locally 
 ```
-git clone https://github.com/soumilshah1995/docker_compose_glue4.0-hudi
-Follow Steps 
+Follow Steps  https://github.com/soumilshah1995/docker_compose_glue4.0-hudi/blob/main/README.md
 ```
 
 ### Step 3: Spin up container and Exec into it Through Docker Desktop or terminal 
