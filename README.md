@@ -34,21 +34,21 @@ Paste this code
 #!/bin/bash
 
 # Define versions
-HUDI_VERSION="0.13.0"
-SPARK_VERSION="3.3"
-HADOOP_AWS_VERSION="3.2.0"
-AWS_SDK_VERSION="1.12.626"
+export HUDI_VERSION="0.13.0"
+export SPARK_VERSION="3.3"
+export HADOOP_AWS_VERSION="3.2.0"
+export AWS_SDK_VERSION="1.12.626"
 
 # Step 1: Create Directory and install JAR files
 mkdir -p cli-staging/
 cd cli-staging/
 
 # Download HUDI JAR files
-HUDI_CLI_JAR="hudi-cli-bundle_2.12-$HUDI_VERSION.jar"
-SPARK_BUNDLE_JAR="hudi-spark$SPARK_VERSION-bundle_2.12-$HUDI_VERSION.jar"
-HUDI_CLI_WITH_BUNDLE_SCRIPT="hudi-cli-with-bundle.sh"
-HADOOP_AWS_JAR="hadoop-aws-$HADOOP_AWS_VERSION.jar"
-AWS_SDK_JAR="aws-java-sdk-bundle-$AWS_SDK_VERSION.jar"
+export HUDI_CLI_JAR="hudi-cli-bundle_2.12-$HUDI_VERSION.jar"
+export SPARK_BUNDLE_JAR="hudi-spark$SPARK_VERSION-bundle_2.12-$HUDI_VERSION.jar"
+export HUDI_CLI_WITH_BUNDLE_SCRIPT="hudi-cli-with-bundle.sh"
+export HADOOP_AWS_JAR="hadoop-aws-$HADOOP_AWS_VERSION.jar"
+export AWS_SDK_JAR="aws-java-sdk-bundle-$AWS_SDK_VERSION.jar"
 
 download_jar() {
   local url="$1"
@@ -83,8 +83,9 @@ echo "SPARK_BUNDLE_JAR is set to: $SPARK_BUNDLE_JAR"
 export CLIENT_JAR="/home/glue_user/cli-staging/$AWS_SDK_JAR:/home/glue_user/cli-staging/$HADOOP_AWS_JAR"
 echo "CLIENT_JAR is set to: $CLIENT_JAR"
 
-export SPARK_HOME=/home/glue_user/spark
+export SPARK_HOME="/home/glue_user/spark"
 echo "SPARK_HOME is set to: $SPARK_HOME"
+
 
 ```
 ### Step 5: Run Shell File and set Enviroment Variables 
